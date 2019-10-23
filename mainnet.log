@@ -1,0 +1,741 @@
+echo [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'test',
+  '0x1ff' ]
+--environment aragon:mainnet --use-frame test 0x1ff
+
+0x1ff
+dao [ '--environment', 'aragon:mainnet', '--use-frame', 'new' ]
+Fetching template bare-kit.aragonpm.eth@latest [started]
+Fetching template bare-kit.aragonpm.eth@latest [completed]
+Create new DAO from template [started]
+Create new DAO from template [completed]
+Checking DAO [started]
+Checking DAO [completed]
+ ✔ Created DAO: 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565
+
+DAO: 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'token',
+  'new',
+  'MarsEquity',
+  'MRQ',
+  18,
+  'true' ]
+Deploy the MiniMeTokenFactory contract [started]
+→ Waiting for the transaction to be mined...
+Deploy the MiniMeTokenFactory contract [completed]
+Deploy the MiniMeToken contract [started]
+→ Waiting for the transaction to be mined...
+Deploy the MiniMeToken contract [failed]
+→ Transaction was not mined within 50 blocks, please make sure your transaction was properly sent. Be aware that it might still be mined!
+ ✖ Transaction was not mined within 50 blocks, please make sure your transaction was properly sent. Be aware that it might still be mined!
+
+1
+Try: 1
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'token',
+  'new',
+  'MarsEquity',
+  'MRQ',
+  18,
+  'true' ]
+Deploy the MiniMeTokenFactory contract [started]
+→ Waiting for the transaction to be mined...
+Deploy the MiniMeTokenFactory contract [completed]
+Deploy the MiniMeToken contract [started]
+→ Waiting for the transaction to be mined...
+Deploy the MiniMeToken contract [completed]
+ ✔ Successfully deployed the token at 0xc651E99f40d908b6a606D54f221b414b5228FF60
+ ℹ Token transaction hash: 0xf868d7d858d19b008337189d2cc969e92a953861e90ee950e1e17b58c8d36f8b
+ ✔ Successfully deployed the token factory at 0x136e6031b0e021955c2E5d92f5aBD326399400eE
+ ℹ Token factory transaction hash: 0x065b7cdb03b1268298d9317e277603608d1bbde3da0c4387aa9a2792f778c74a
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'install',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  'token-manager',
+  '--app-init',
+  'none' ]
+Fetching token-manager.aragonpm.eth@latest [started]
+Fetching token-manager.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [skipped]
+→ Installing the first instance of token-manager.aragonpm.eth in DAO
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 0x6b20a3010614eeebf2138ccec99f028a61c811b3b1a3343b6ff635985c75c91f app linked to the Kernel, setting its code to 0xde3A93028F2283cc28756B3674BD657eaFB992f4 ."
+ ✔ Installed token-manager at: 0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d
+ ⚠ App could not be initialized, check the --app-init flag. Functions protected behind the ACL will not work until the app is initialized
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'token',
+  'change-controller',
+  '0xc651E99f40d908b6a606D54f221b414b5228FF60',
+  '0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d' ]
+Changing the MiniMe token controller [started]
+→ Waiting for the transaction to be mined...
+Changing the MiniMe token controller [completed]
+ ✔ Successfully changed the controller of 0xc651E99f40d908b6a606D54f221b414b5228FF60 to 0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d
+ ℹ Transaction hash: 0xe6352b3b61a39fa285160b75d9108378b8b4b2fdcf52fd75f4df7f36ff428936
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'create',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d',
+  'MINT_ROLE',
+  '0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c',
+  '0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✖ Cannot read property 'description' of undefined
+
+1
+Try: 1
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'create',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d',
+  'MINT_ROLE',
+  '0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c',
+  '0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+Sending transaction [failed]
+→ Cannot find transaction path for executing action
+ ✖ Cannot find transaction path for executing action
+
+1
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'exec',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d',
+  'initialize',
+  '0xc651E99f40d908b6a606D54f221b414b5228FF60',
+  'true',
+  0 ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "undefined"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'exec',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d',
+  'mint',
+  '0xe5818d70a9b5aed2bfDe4E41FBcB07dD80f8fC84',
+  '1000000000000000000000' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Mint 1000 tokens for 0xe5818d70a9b5aed2bfDe4E41FBcB07dD80f8fC84"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'install',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  'voting',
+  '--app-init-args',
+  '0xc651E99f40d908b6a606D54f221b414b5228FF60',
+  500000000000000000,
+  250000000000000000,
+  172800 ]
+Fetching voting.aragonpm.eth@latest [started]
+Fetching voting.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [skipped]
+→ Installing the first instance of voting.aragonpm.eth in DAO
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 0x9fa3927f639745e587912d4b0fea7ef9013bf93fb907d29faeab57417ba6e1d4 app linked to the Kernel, setting its code to 0xb935C3D80229d5D92f3761b17Cd81dC2610e3a45 ."
+ ✔ Installed voting at: 0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'create',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d',
+  'CREATE_VOTES_ROLE',
+  '0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d',
+  '0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✖ Cannot read property 'description' of undefined
+
+1
+Try: 1
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'create',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d',
+  'CREATE_VOTES_ROLE',
+  '0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d',
+  '0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+Sending transaction [failed]
+→ Cannot find transaction path for executing action
+ ✖ Cannot find transaction path for executing action
+
+1
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'install',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  'vault' ]
+Fetching vault.aragonpm.eth@latest [started]
+Fetching vault.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [skipped]
+→ Installing the first instance of vault.aragonpm.eth in DAO
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 0x7e852e0fcfce6551c13800f1e7476f982525c2b5277ba14b24339c68416336d1 app linked to the Kernel, setting its code to 0x03AD07802BBA1b6FA293E593a42845E6569A7470 ."
+ ✔ Installed vault at: 0xe27caf89517A33dabE836bb740FF96Cc3751a086
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'install',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  'finance',
+  '--app-init-args',
+  '0xe27caf89517A33dabE836bb740FF96Cc3751a086',
+  604800 ]
+Fetching finance.aragonpm.eth@latest [started]
+Fetching finance.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [skipped]
+→ Installing the first instance of finance.aragonpm.eth in DAO
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 0xbf8491150dafc5dcaee5b861414dca922de09ccffa344964ae167212e8c673ae app linked to the Kernel, setting its code to 0x836835289A2E81B66AE5d95b7c8dBC0480dCf9da ."
+ ✔ Installed finance at: 0xe13ab0146ac50A67e02d0FC141E6Bc9dCa8FE2F4
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'create',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0xe27caf89517A33dabE836bb740FF96Cc3751a086',
+  'TRANSFER_ROLE',
+  '0xe13ab0146ac50A67e02d0FC141E6Bc9dCa8FE2F4',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✖ Cannot read property 'description' of undefined
+
+1
+Try: 1
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'create',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0xe27caf89517A33dabE836bb740FF96Cc3751a086',
+  'TRANSFER_ROLE',
+  '0xe13ab0146ac50A67e02d0FC141E6Bc9dCa8FE2F4',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+Sending transaction [failed]
+→ Cannot find transaction path for executing action
+ ✖ Cannot find transaction path for executing action
+
+1
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'create',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0xe13ab0146ac50A67e02d0FC141E6Bc9dCa8FE2F4',
+  'CREATE_PAYMENTS_ROLE',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✖ Cannot read property 'description' of undefined
+
+1
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'create',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0xe13ab0146ac50A67e02d0FC141E6Bc9dCa8FE2F4',
+  'EXECUTE_PAYMENTS_ROLE',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Create a new permission granting 'Voting' the ability to perform actions of role 'Execute payments' on 'Finance' (setting 'Voting' as the permission manager)"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'create',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0xe13ab0146ac50A67e02d0FC141E6Bc9dCa8FE2F4',
+  'MANAGE_PAYMENTS_ROLE',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Create a new permission granting 'Voting' the ability to perform actions of role 'Manage payments' on 'Finance' (setting 'Voting' as the permission manager)"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'grant',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d',
+  'MINT_ROLE',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Grants 'Voting' the ability to perform actions of role 'Mint tokens' on 'Tokens'"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'revoke',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d',
+  'MINT_ROLE',
+  '0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Revokes 0x2193FD6B2AB1C8D3a57AfbC142D9c6a4c138C30C the ability to perform actions of role 'Mint tokens' on 'Tokens'"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'set-manager',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d',
+  'MINT_ROLE',
+  '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Sets 'Voting' as the manager of the permission 'Mint tokens' in 'Tokens'"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'token',
+  'new',
+  'MarsReputation',
+  'MRR',
+  18,
+  'true' ]
+Deploy the MiniMeTokenFactory contract [started]
+→ Waiting for the transaction to be mined...
+Deploy the MiniMeTokenFactory contract [completed]
+Deploy the MiniMeToken contract [started]
+→ Waiting for the transaction to be mined...
+Deploy the MiniMeToken contract [completed]
+ ✔ Successfully deployed the token at 0xF8b0D22608613A10916Cc9D00c0DE893E2B830e8
+ ℹ Token transaction hash: 0xd68077f19c9649dd5ad3e9f402ea8926532023a0c9f73a3f7ffa2501df3d7994
+ ✔ Successfully deployed the token factory at 0x00b0023511AFB883dd2E725de881f1EBd207D7F5
+ ℹ Token factory transaction hash: 0x6f77275ef3ea7f386f57308a8a42b92266aae518adc492e2233373cf5566acad
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'install',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  'token-manager',
+  '--app-init',
+  'none' ]
+Fetching token-manager.aragonpm.eth@latest [started]
+Fetching token-manager.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [completed]
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 'token-manager.aragonpm.eth' app linked to the Kernel, setting its code to 0xde3A93028F2283cc28756B3674BD657eaFB992f4 ."
+ ✔ Installed token-manager at: 0x584a0726eD8d3d7b7bcd6BBB49b9705DB0ABcE04
+ ⚠ App could not be initialized, check the --app-init flag. Functions protected behind the ACL will not work until the app is initialized
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'token',
+  'change-controller',
+  '0xF8b0D22608613A10916Cc9D00c0DE893E2B830e8',
+  '0x584a0726eD8d3d7b7bcd6BBB49b9705DB0ABcE04' ]
+Changing the MiniMe token controller [started]
+→ Waiting for the transaction to be mined...
+Changing the MiniMe token controller [completed]
+ ✔ Successfully changed the controller of 0xF8b0D22608613A10916Cc9D00c0DE893E2B830e8 to 0x584a0726eD8d3d7b7bcd6BBB49b9705DB0ABcE04
+ ℹ Transaction hash: 0xfba59b142fc30c5dd2d89c675e571eb550749aca8447f316071564c451f41418
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'create',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x584a0726eD8d3d7b7bcd6BBB49b9705DB0ABcE04',
+  'MINT_ROLE',
+  '0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c',
+  '0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✖ Cannot read property 'description' of undefined
+
+1
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'exec',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x584a0726eD8d3d7b7bcd6BBB49b9705DB0ABcE04',
+  'initialize',
+  '0xF8b0D22608613A10916Cc9D00c0DE893E2B830e8',
+  'true',
+  0 ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "undefined"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'exec',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x584a0726eD8d3d7b7bcd6BBB49b9705DB0ABcE04',
+  'mint',
+  '0xe5818d70a9b5aed2bfDe4E41FBcB07dD80f8fC84',
+  '100000000000000000000' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Mint 100 tokens for 0xe5818d70a9b5aed2bfDe4E41FBcB07dD80f8fC84"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'install',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  'voting',
+  '--app-init-args',
+  '0xF8b0D22608613A10916Cc9D00c0DE893E2B830e8',
+  250000000000000000,
+  250000000000000000,
+  432000 ]
+Fetching voting.aragonpm.eth@latest [started]
+Fetching voting.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [completed]
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 'voting.aragonpm.eth' app linked to the Kernel, setting its code to 0xb935C3D80229d5D92f3761b17Cd81dC2610e3a45 ."
+ ✔ Installed voting at: 0x332558D582D6CA70762917a52B5f0B4268d68a5C
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'create',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x332558D582D6CA70762917a52B5f0B4268d68a5C',
+  'CREATE_VOTES_ROLE',
+  '0x584a0726eD8d3d7b7bcd6BBB49b9705DB0ABcE04',
+  '0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✖ Cannot read property 'description' of undefined
+
+1
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'grant',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x584a0726eD8d3d7b7bcd6BBB49b9705DB0ABcE04',
+  'MINT_ROLE',
+  '0x332558D582D6CA70762917a52B5f0B4268d68a5C' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Grants 'Voting' the ability to perform actions of role 'Mint tokens' on 'Tokens'"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'revoke',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x584a0726eD8d3d7b7bcd6BBB49b9705DB0ABcE04',
+  'MINT_ROLE',
+  '0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Revokes 0x2193FD6B2AB1C8D3a57AfbC142D9c6a4c138C30C the ability to perform actions of role 'Mint tokens' on 'Tokens'"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  'set-manager',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '0x584a0726eD8d3d7b7bcd6BBB49b9705DB0ABcE04',
+  'MINT_ROLE',
+  '0x332558D582D6CA70762917a52B5f0B4268d68a5C' ]
+Generating transaction [started]
+→ Fetching DAO at 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Sets 'Voting' as the manager of the permission 'Mint tokens' in 'Tokens'"
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'acl',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565' ]
+Inspecting DAO Permissions [started]
+→ Fetching permissions for 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Inspecting DAO Permissions [completed]
+ ✔ Successfully fetched DAO apps for 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565
+┌────────────────────────┬─────────────────────────┬────────────────────────┬───────────────────────┐
+│ App                    │ Action                  │ Allowed entities       │ Manager               │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ acl (0xaa35)           │ CREATE_PERMISSIONS_ROLE │ ✅  0x2193FD6B2AB1C8... │   0x2193FD6B2AB1C8... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ 0x3c307fefd3d71c...    │ APP_MANAGER_ROLE        │ ✅  0x2193FD6B2AB1C8... │   0x2193FD6B2AB1C8... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ token-manager (0x3f8f) │ MINT_ROLE               │ ✅  0x217A69C72Deb4c... │   0x217A69C72Deb4c... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ voting (0x217a)        │ CREATE_VOTES_ROLE       │ ✅  0x3f8fb946F0d938... │   0x2193FD6B2AB1C8... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ vault (0xe27c)         │ TRANSFER_ROLE           │ ✅  0xe13ab0146ac50A... │   0x217A69C72Deb4c... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ finance (0xe13a)       │ CREATE_PAYMENTS_ROLE    │ ✅  0x217A69C72Deb4c... │   0x217A69C72Deb4c... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ finance (0xe13a)       │ EXECUTE_PAYMENTS_ROLE   │ ✅  0x217A69C72Deb4c... │   0x217A69C72Deb4c... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ finance (0xe13a)       │ MANAGE_PAYMENTS_ROLE    │ ✅  0x217A69C72Deb4c... │   0x217A69C72Deb4c... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ token-manager (0x584a) │ MINT_ROLE               │ ✅  0x332558D582D6CA... │   0x332558D582D6CA... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ voting (0x3325)        │ CREATE_VOTES_ROLE       │ ✅  0x584a0726eD8d3d... │   0x2193FD6B2AB1C8... │
+└────────────────────────┴─────────────────────────┴────────────────────────┴───────────────────────┘
+
+dao [ '--environment',
+  'aragon:mainnet',
+  '--use-frame',
+  'apps',
+  '0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565',
+  '--all' ]
+Inspecting DAO [started]
+→ Fetching apps for 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565...
+Inspecting DAO [completed]
+Fetching permissionless apps [started]
+Fetching permissionless apps [completed]
+ ✔ Successfully fetched DAO apps for 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565
+┌──────────────────────┬────────────────────────────────────────────┬─────────────────────────────────────────────────────┐
+│ App                  │ Proxy address                              │ Content                                             │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ kernel               │ 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565 │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ acl                  │ 0xaa3561ff0e71a22b2b0f5fddba55d0333d5d677e │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ evmreg               │ 0xa0de402e5494c37d6e4ef2d5387599b58678ea3e │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ token-manager@v2.0.4 │ 0x3f8fb946f0d9381785e7bb450b01544acffcab5d │ ipfs:QmcKAS1ReroTLQZA1AzDCURbqyiYzVt9GnMX8H893WXivM │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ voting@v2.0.4        │ 0x217a69c72deb4cdab5edb8bdb9146de46d26f87d │ ipfs:QmZaUjYWqXeVWDpQLJdFUrewxhnWTiCSzv8RPCcL2FEXED │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ vault@v3.0.1         │ 0xe27caf89517a33dabe836bb740ff96cc3751a086 │ ipfs:QmYRcQBcHsietDuUmt7bbFG7BqetoYF85CxDn7pAa2wdnA │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ finance@v2.0.6       │ 0xe13ab0146ac50a67e02d0fc141e6bc9dca8fe2f4 │ ipfs:QmUigVxDYp4qcNZUwBe3Q1mG7Mq7rQrdctMreke1Cg32oZ │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ token-manager@v2.0.4 │ 0x584a0726ed8d3d7b7bcd6bbb49b9705db0abce04 │ ipfs:QmcKAS1ReroTLQZA1AzDCURbqyiYzVt9GnMX8H893WXivM │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ voting@v2.0.4        │ 0x332558d582d6ca70762917a52b5f0b4268d68a5c │ ipfs:QmZaUjYWqXeVWDpQLJdFUrewxhnWTiCSzv8RPCcL2FEXED │
+└──────────────────────┴────────────────────────────────────────────┴─────────────────────────────────────────────────────┘
+┌────────────────────┬───────────────┐
+│ Permissionless app │ Proxy address │
+└────────────────────┴───────────────┘
+
+[ { name: 'MarsEquity',
+    symbol: 'MRQ',
+    success: 500000000000000000,
+    quorum: 250000000000000000,
+    period: 172800,
+    holders: [ [Array] ],
+    token: '0xc651E99f40d908b6a606D54f221b414b5228FF60',
+    tm: '0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d',
+    vot: '0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d' },
+  { name: 'MarsReputation',
+    symbol: 'MRR',
+    success: 250000000000000000,
+    quorum: 250000000000000000,
+    period: 432000,
+    holders: [ [Array] ],
+    token: '0xF8b0D22608613A10916Cc9D00c0DE893E2B830e8',
+    tm: '0x584a0726eD8d3d7b7bcd6BBB49b9705DB0ABcE04',
+    vot: '0x332558D582D6CA70762917a52B5f0B4268d68a5C' } ]
+{ 'dao --environment aragon:mainnet --use-frame token new MarsEquity MRQ 18 true': 0,
+  'dao --environment aragon:mainnet --use-frame acl create 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565 0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d MINT_ROLE 0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c 0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c': 0,
+  'dao --environment aragon:mainnet --use-frame acl create 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565 0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d CREATE_VOTES_ROLE 0x3f8fb946F0d9381785E7bB450B01544ACFfcAb5d 0x2193fd6b2ab1c8d3a57afbc142d9c6a4c138c30c': 0,
+  'dao --environment aragon:mainnet --use-frame acl create 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565 0xe27caf89517A33dabE836bb740FF96Cc3751a086 TRANSFER_ROLE 0xe13ab0146ac50A67e02d0FC141E6Bc9dCa8FE2F4 0x217A69C72Deb4cdAB5Edb8bDb9146dE46D26f87d': 0 }
+calls 36
+DAO: 0x3C307FeFd3D71c3Ca8a3c26539eF4d47c61B6565

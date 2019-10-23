@@ -1,0 +1,21 @@
+{
+  "name": "daofund",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.0.0",
+    "ez-ens": "^1.1.2",
+    "readline-sync": "^1.4.9"
+  }
+}

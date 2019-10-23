@@ -1,0 +1,545 @@
+echo [ 'test', '0x1ff' ]
+test 0x1ff
+
+0x1ff
+dao [ 'new' ]
+Fetching template bare-kit.aragonpm.eth@latest [started]
+Fetching template bare-kit.aragonpm.eth@latest [completed]
+Create new DAO from template [started]
+Create new DAO from template [completed]
+Checking DAO [started]
+Checking DAO [completed]
+ ✔ Created DAO: 0x62415400537A556d449DdC19BeC1A1EE5D7b0812
+
+DAO: 0x62415400537A556d449DdC19BeC1A1EE5D7b0812
+dao [ 'token', 'new', 'MarsEquity', 'MRQ', 18, 'true' ]
+Deploy the MiniMeTokenFactory contract [started]
+→ Waiting for the transaction to be mined...
+Deploy the MiniMeTokenFactory contract [completed]
+Deploy the MiniMeToken contract [started]
+→ Waiting for the transaction to be mined...
+Deploy the MiniMeToken contract [completed]
+ ✔ Successfully deployed the token at 0x6E0745b6B18d0233708554049EEAaB0CB81c4Ab0
+ ℹ Token transaction hash: 0x1160468fbd8aa6cd48cb33462897211b0e101957c890da405f428e732ee20cc2
+ ✔ Successfully deployed the token factory at 0x79CA3AA3287FA27EB96Bc018De53B9f84C6b04ca
+ ℹ Token factory transaction hash: 0xa581e4d10d8057d037f3795e23b9b8f0858823ee5c955b6123c17535fa669688
+
+dao [ 'install',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  'token-manager',
+  '--app-init',
+  'none' ]
+Fetching token-manager.aragonpm.eth@latest [started]
+Fetching token-manager.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [skipped]
+→ Installing the first instance of token-manager.aragonpm.eth in DAO
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 0x6b20a3010614eeebf2138ccec99f028a61c811b3b1a3343b6ff635985c75c91f app linked to the Kernel, setting its code to 0x9f00866D6b10edf4f6dE055AD89AB3246FD487e7 ."
+ ✔ Installed token-manager at: 0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df
+ ⚠ App could not be initialized, check the --app-init flag. Functions protected behind the ACL will not work until the app is initialized
+
+dao [ 'token',
+  'change-controller',
+  '0x6E0745b6B18d0233708554049EEAaB0CB81c4Ab0',
+  '0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df' ]
+Changing the MiniMe token controller [started]
+→ Waiting for the transaction to be mined...
+Changing the MiniMe token controller [completed]
+ ✔ Successfully changed the controller of 0x6E0745b6B18d0233708554049EEAaB0CB81c4Ab0 to 0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df
+ ℹ Transaction hash: 0x15b84bbf17b775f125b6cdba719a3a9c114ac8485e1785c475a83ee2137c0491
+
+dao [ 'acl',
+  'create',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df',
+  'MINT_ROLE',
+  '0xb4124cEB3451635DAcedd11767f004d8a28c6eE7',
+  '0xb4124cEB3451635DAcedd11767f004d8a28c6eE7' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Create a new permission granting 0xb4124cEB3451635DAcedd11767f004d8a28c6eE7 the ability to perform actions of role 0x154c00819833dac601ee5ddded6fda79d9d8b506b911b3dbd54cdb95fe6c3686 on 0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df (setting 0xb4124cEB3451635DAcedd11767f004d8a28c6eE7 as the permission manager)"
+
+dao [ 'exec',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df',
+  'initialize',
+  '0x6E0745b6B18d0233708554049EEAaB0CB81c4Ab0',
+  'true',
+  0 ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "undefined"
+
+dao [ 'exec',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df',
+  'mint',
+  '0xe5818d70a9b5aed2bfDe4E41FBcB07dD80f8fC84',
+  '1000000000000000000000' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Mint 1000 tokens for 0xe5818d70a9b5aed2bfDe4E41FBcB07dD80f8fC84"
+
+dao [ 'install',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  'voting',
+  '--app-init-args',
+  '0x6E0745b6B18d0233708554049EEAaB0CB81c4Ab0',
+  500000000000000000,
+  250000000000000000,
+  172800 ]
+Fetching voting.aragonpm.eth@latest [started]
+Fetching voting.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [skipped]
+→ Installing the first instance of voting.aragonpm.eth in DAO
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 0x9fa3927f639745e587912d4b0fea7ef9013bf93fb907d29faeab57417ba6e1d4 app linked to the Kernel, setting its code to 0x24650cAD431915051E2987455b76e0CDCaA1D4D8 ."
+ ✔ Installed voting at: 0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4
+
+dao [ 'acl',
+  'create',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4',
+  'CREATE_VOTES_ROLE',
+  '0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df',
+  '0xb4124cEB3451635DAcedd11767f004d8a28c6eE7' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Create a new permission granting 'Tokens' the ability to perform actions of role 0xe7dcd7275292e064d090fbc5f3bd7995be23b502c1fed5cd94cfddbbdcd32bbc on 0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4 (setting 0xb4124cEB3451635DAcedd11767f004d8a28c6eE7 as the permission manager)"
+
+dao [ 'install',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  'vault' ]
+Fetching vault.aragonpm.eth@latest [started]
+Fetching vault.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [skipped]
+→ Installing the first instance of vault.aragonpm.eth in DAO
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 0x7e852e0fcfce6551c13800f1e7476f982525c2b5277ba14b24339c68416336d1 app linked to the Kernel, setting its code to 0x73a08DC74eF4ed2c360199244bb69F1464204E7C ."
+ ✔ Installed vault at: 0x734670205F81D218E41d217b78441E9806970611
+
+dao [ 'install',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  'finance',
+  '--app-init-args',
+  '0x734670205F81D218E41d217b78441E9806970611',
+  604800 ]
+Fetching finance.aragonpm.eth@latest [started]
+Fetching finance.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [skipped]
+→ Installing the first instance of finance.aragonpm.eth in DAO
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 0xbf8491150dafc5dcaee5b861414dca922de09ccffa344964ae167212e8c673ae app linked to the Kernel, setting its code to 0x79Cdbc3db27f70815F8AB11F76d1eEd07BF106b0 ."
+ ✔ Installed finance at: 0x933e608F95fd899Eb41f5E428d73d4D3C37e7Cc8
+
+dao [ 'acl',
+  'create',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x734670205F81D218E41d217b78441E9806970611',
+  'TRANSFER_ROLE',
+  '0x933e608F95fd899Eb41f5E428d73d4D3C37e7Cc8',
+  '0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Create a new permission granting 0x933e608F95fd899Eb41f5E428d73d4D3C37e7Cc8 the ability to perform actions of role 0x8502233096d909befbda0999bb8ea2f3a6be3c138b9fbf003752a4c8bce86f6c on 0x734670205F81D218E41d217b78441E9806970611 (setting 'Voting' as the permission manager)"
+
+dao [ 'acl',
+  'create',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x933e608F95fd899Eb41f5E428d73d4D3C37e7Cc8',
+  'CREATE_PAYMENTS_ROLE',
+  '0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4',
+  '0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Create a new permission granting 'Voting' the ability to perform actions of role 0x5de467a460382d13defdc02aacddc9c7d6605d6d4e0b8bd2f70732cae8ea17bc on 0x933e608F95fd899Eb41f5E428d73d4D3C37e7Cc8 (setting 'Voting' as the permission manager)"
+
+dao [ 'acl',
+  'create',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x933e608F95fd899Eb41f5E428d73d4D3C37e7Cc8',
+  'EXECUTE_PAYMENTS_ROLE',
+  '0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4',
+  '0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Create a new permission granting 'Voting' the ability to perform actions of role 'Execute payments' on 'Finance' (setting 'Voting' as the permission manager)"
+
+dao [ 'acl',
+  'create',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x933e608F95fd899Eb41f5E428d73d4D3C37e7Cc8',
+  'MANAGE_PAYMENTS_ROLE',
+  '0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4',
+  '0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Create a new permission granting 'Voting' the ability to perform actions of role 'Manage payments' on 'Finance' (setting 'Voting' as the permission manager)"
+
+dao [ 'acl',
+  'grant',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df',
+  'MINT_ROLE',
+  '0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Grants 'Voting' the ability to perform actions of role 'Mint tokens' on 'Tokens'"
+
+dao [ 'acl',
+  'revoke',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df',
+  'MINT_ROLE',
+  '0xb4124cEB3451635DAcedd11767f004d8a28c6eE7' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Revokes 0xb4124cEB3451635DAcedd11767f004d8a28c6eE7 the ability to perform actions of role 'Mint tokens' on 'Tokens'"
+
+dao [ 'acl',
+  'set-manager',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df',
+  'MINT_ROLE',
+  '0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Sets 'Voting' as the manager of the permission 'Mint tokens' in 'Tokens'"
+
+dao [ 'token', 'new', 'MarsReputation', 'MRR', 18, 'true' ]
+Deploy the MiniMeTokenFactory contract [started]
+→ Waiting for the transaction to be mined...
+Deploy the MiniMeTokenFactory contract [completed]
+Deploy the MiniMeToken contract [started]
+→ Waiting for the transaction to be mined...
+Deploy the MiniMeToken contract [completed]
+ ✔ Successfully deployed the token at 0x777382CA6A5324085a7f88976e568C130162A253
+ ℹ Token transaction hash: 0x4a05090e504288727cf6f61dd8f94bafadfd44ba7a3d1303c9beb4d137fe2451
+ ✔ Successfully deployed the token factory at 0x4eD6178D5dEf6AFD8e23334038609125cBB15C8F
+ ℹ Token factory transaction hash: 0xd75ebb874716f919202435162644783f39881b3a74d6371facdb054705dcff6b
+
+dao [ 'install',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  'token-manager',
+  '--app-init',
+  'none' ]
+Fetching token-manager.aragonpm.eth@latest [started]
+Fetching token-manager.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [completed]
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 'token-manager.aragonpm.eth' app linked to the Kernel, setting its code to 0x9f00866D6b10edf4f6dE055AD89AB3246FD487e7 ."
+ ✔ Installed token-manager at: 0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977
+ ⚠ App could not be initialized, check the --app-init flag. Functions protected behind the ACL will not work until the app is initialized
+
+dao [ 'token',
+  'change-controller',
+  '0x777382CA6A5324085a7f88976e568C130162A253',
+  '0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977' ]
+Changing the MiniMe token controller [started]
+→ Waiting for the transaction to be mined...
+Changing the MiniMe token controller [completed]
+ ✔ Successfully changed the controller of 0x777382CA6A5324085a7f88976e568C130162A253 to 0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977
+ ℹ Transaction hash: 0xd41d0fd5fc35a7376ba7b81565b43abd92095a7b8d4d0108551561ddbeca7eca
+
+dao [ 'acl',
+  'create',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977',
+  'MINT_ROLE',
+  '0xb4124cEB3451635DAcedd11767f004d8a28c6eE7',
+  '0xb4124cEB3451635DAcedd11767f004d8a28c6eE7' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Create a new permission granting 0xb4124cEB3451635DAcedd11767f004d8a28c6eE7 the ability to perform actions of role 'Mint tokens' on 0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977 (setting 0xb4124cEB3451635DAcedd11767f004d8a28c6eE7 as the permission manager)"
+
+dao [ 'exec',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977',
+  'initialize',
+  '0x777382CA6A5324085a7f88976e568C130162A253',
+  'true',
+  0 ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "undefined"
+
+dao [ 'exec',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977',
+  'mint',
+  '0xe5818d70a9b5aed2bfDe4E41FBcB07dD80f8fC84',
+  '100000000000000000000' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Mint 100 tokens for 0xe5818d70a9b5aed2bfDe4E41FBcB07dD80f8fC84"
+
+dao [ 'install',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  'voting',
+  '--app-init-args',
+  '0x777382CA6A5324085a7f88976e568C130162A253',
+  250000000000000000,
+  250000000000000000,
+  432000 ]
+Fetching voting.aragonpm.eth@latest [started]
+Fetching voting.aragonpm.eth@latest [completed]
+Checking installed version [started]
+Checking installed version [completed]
+Deploying app instance [started]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+Deploying app instance [completed]
+Fetching deployed app [started]
+Fetching deployed app [completed]
+ ℹ Successfully executed: "Create a new upgradeable instance of 'voting.aragonpm.eth' app linked to the Kernel, setting its code to 0x24650cAD431915051E2987455b76e0CDCaA1D4D8 ."
+ ✔ Installed voting at: 0x385c2010aCD80814483ed0d27672A285C23bBE49
+
+dao [ 'acl',
+  'create',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x385c2010aCD80814483ed0d27672A285C23bBE49',
+  'CREATE_VOTES_ROLE',
+  '0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977',
+  '0xb4124cEB3451635DAcedd11767f004d8a28c6eE7' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Create a new permission granting 'Tokens' the ability to perform actions of role 'Create new votes' on 0x385c2010aCD80814483ed0d27672A285C23bBE49 (setting 0xb4124cEB3451635DAcedd11767f004d8a28c6eE7 as the permission manager)"
+
+dao [ 'acl',
+  'grant',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977',
+  'MINT_ROLE',
+  '0x385c2010aCD80814483ed0d27672A285C23bBE49' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Grants 'Voting' the ability to perform actions of role 'Mint tokens' on 'Tokens'"
+
+dao [ 'acl',
+  'revoke',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977',
+  'MINT_ROLE',
+  '0xb4124cEB3451635DAcedd11767f004d8a28c6eE7' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Revokes 0xb4124cEB3451635DAcedd11767f004d8a28c6eE7 the ability to perform actions of role 'Mint tokens' on 'Tokens'"
+
+dao [ 'acl',
+  'set-manager',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977',
+  'MINT_ROLE',
+  '0x385c2010aCD80814483ed0d27672A285C23bBE49' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Sets 'Voting' as the manager of the permission 'Mint tokens' in 'Tokens'"
+
+dao [ 'acl', '0x62415400537A556d449DdC19BeC1A1EE5D7b0812' ]
+Inspecting DAO Permissions [started]
+→ Fetching permissions for 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Inspecting DAO Permissions [completed]
+ ✔ Successfully fetched DAO apps for 0x62415400537A556d449DdC19BeC1A1EE5D7b0812
+┌────────────────────────┬─────────────────────────┬────────────────────────┬───────────────────────┐
+│ App                    │ Action                  │ Allowed entities       │ Manager               │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ acl (0x3788)           │ CREATE_PERMISSIONS_ROLE │ ✅  0xb4124cEB345163... │   0xb4124cEB345163... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ 0x62415400537a55...    │ APP_MANAGER_ROLE        │ ✅  0xb4124cEB345163... │   0xb4124cEB345163... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ token-manager (0xf3a4) │ MINT_ROLE               │ ✅  0xEfADe5540d0Da8... │   0xEfADe5540d0Da8... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ voting (0xefad)        │ CREATE_VOTES_ROLE       │ ✅  0xF3A4f81D3113D5... │   0xb4124cEB345163... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ vault (0x7346)         │ TRANSFER_ROLE           │ ✅  0x933e608F95fd89... │   0xEfADe5540d0Da8... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ finance (0x933e)       │ CREATE_PAYMENTS_ROLE    │ ✅  0xEfADe5540d0Da8... │   0xEfADe5540d0Da8... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ finance (0x933e)       │ EXECUTE_PAYMENTS_ROLE   │ ✅  0xEfADe5540d0Da8... │   0xEfADe5540d0Da8... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ finance (0x933e)       │ MANAGE_PAYMENTS_ROLE    │ ✅  0xEfADe5540d0Da8... │   0xEfADe5540d0Da8... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ token-manager (0x426b) │ MINT_ROLE               │ ✅  0x385c2010aCD808... │   0x385c2010aCD808... │
+├────────────────────────┼─────────────────────────┼────────────────────────┼───────────────────────┤
+│ voting (0x385c)        │ CREATE_VOTES_ROLE       │ ✅  0x426b18D1Cca4b1... │   0xb4124cEB345163... │
+└────────────────────────┴─────────────────────────┴────────────────────────┴───────────────────────┘
+
+dao [ 'apps', '0x62415400537A556d449DdC19BeC1A1EE5D7b0812', '--all' ]
+Inspecting DAO [started]
+→ Fetching apps for 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Inspecting DAO [completed]
+Fetching permissionless apps [started]
+Fetching permissionless apps [completed]
+ ✔ Successfully fetched DAO apps for 0x62415400537A556d449DdC19BeC1A1EE5D7b0812
+┌──────────────────────┬────────────────────────────────────────────┬─────────────────────────────────────────────────────┐
+│ App                  │ Proxy address                              │ Content                                             │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ kernel               │ 0x62415400537A556d449DdC19BeC1A1EE5D7b0812 │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ acl                  │ 0x3788a68266fa11b479398e0b29c40e2377c76017 │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ evmreg               │ 0x0aa36f3888830d343dbfbc460d392f6725eacfef │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ token-manager@v1.0.0 │ 0xf3a4f81d3113d53b0fbef962b0724c1cd88014df │ ipfs:QmeM6ovLHD6AGYCwXKcfTzoyHDvvcub3bZEHrcB36343LV │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ voting@v1.0.0        │ 0xefade5540d0da875b0332eba9b17ccf8bdd960c4 │ ipfs:QmU3UARNMZW6Lquvu286wFJVkMxS13fVMFdkxy6HrUdfh5 │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ vault@v1.0.0         │ 0x734670205f81d218e41d217b78441e9806970611 │ ipfs:QmepsoVXh3BRoFmwvxHueL2RuHoJnmirU6G1VW7k4iyTnY │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ finance@v1.0.0       │ 0x933e608f95fd899eb41f5e428d73d4d3c37e7cc8 │ ipfs:QmX2T3vRsqt9Vzsc8SBijmzNSTsSyihjp2RrLD73ZcUi8d │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ token-manager@v1.0.0 │ 0x426b18d1cca4b14616ffb174af2fe927de84b977 │ ipfs:QmeM6ovLHD6AGYCwXKcfTzoyHDvvcub3bZEHrcB36343LV │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ voting@v1.0.0        │ 0x385c2010acd80814483ed0d27672a285c23bbe49 │ ipfs:QmU3UARNMZW6Lquvu286wFJVkMxS13fVMFdkxy6HrUdfh5 │
+└──────────────────────┴────────────────────────────────────────────┴─────────────────────────────────────────────────────┘
+┌────────────────────┬───────────────┐
+│ Permissionless app │ Proxy address │
+└────────────────────┴───────────────┘
+
+[ { name: 'MarsEquity',
+    symbol: 'MRQ',
+    success: 500000000000000000,
+    quorum: 250000000000000000,
+    period: 172800,
+    holders: [ [Array] ],
+    token: '0x6E0745b6B18d0233708554049EEAaB0CB81c4Ab0',
+    tm: '0xF3A4f81D3113D53B0fBEF962b0724c1cd88014Df',
+    vot: '0xEfADe5540d0Da875b0332eba9b17ccF8Bdd960c4' },
+  { name: 'MarsReputation',
+    symbol: 'MRR',
+    success: 250000000000000000,
+    quorum: 250000000000000000,
+    period: 432000,
+    holders: [ [Array] ],
+    token: '0x777382CA6A5324085a7f88976e568C130162A253',
+    tm: '0x426b18D1Cca4b14616Ffb174AF2Fe927de84b977',
+    vot: '0x385c2010aCD80814483ed0d27672A285C23bBE49' } ]
+{}
+calls 32
+DAO: 0x62415400537A556d449DdC19BeC1A1EE5D7b0812

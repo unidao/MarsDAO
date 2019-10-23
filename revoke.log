@@ -1,0 +1,159 @@
+dao [ 'apps', '0x62415400537A556d449DdC19BeC1A1EE5D7b0812' ]
+Inspecting DAO [started]
+→ Fetching apps for 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Inspecting DAO [completed]
+ ✔ Successfully fetched DAO apps for 0x62415400537A556d449DdC19BeC1A1EE5D7b0812
+┌──────────────────────┬────────────────────────────────────────────┬─────────────────────────────────────────────────────┐
+│ App                  │ Proxy address                              │ Content                                             │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ kernel               │ 0x62415400537A556d449DdC19BeC1A1EE5D7b0812 │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ acl                  │ 0x3788a68266fa11b479398e0b29c40e2377c76017 │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ evmreg               │ 0x0aa36f3888830d343dbfbc460d392f6725eacfef │ (No UI available)                                   │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ token-manager@v1.0.0 │ 0xf3a4f81d3113d53b0fbef962b0724c1cd88014df │ ipfs:QmeM6ovLHD6AGYCwXKcfTzoyHDvvcub3bZEHrcB36343LV │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ voting@v1.0.0        │ 0xefade5540d0da875b0332eba9b17ccf8bdd960c4 │ ipfs:QmU3UARNMZW6Lquvu286wFJVkMxS13fVMFdkxy6HrUdfh5 │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ vault@v1.0.0         │ 0x734670205f81d218e41d217b78441e9806970611 │ ipfs:QmepsoVXh3BRoFmwvxHueL2RuHoJnmirU6G1VW7k4iyTnY │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ finance@v1.0.0       │ 0x933e608f95fd899eb41f5e428d73d4d3c37e7cc8 │ ipfs:QmX2T3vRsqt9Vzsc8SBijmzNSTsSyihjp2RrLD73ZcUi8d │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ token-manager@v1.0.0 │ 0x426b18d1cca4b14616ffb174af2fe927de84b977 │ ipfs:QmeM6ovLHD6AGYCwXKcfTzoyHDvvcub3bZEHrcB36343LV │
+├──────────────────────┼────────────────────────────────────────────┼─────────────────────────────────────────────────────┤
+│ voting@v1.0.0        │ 0x385c2010acd80814483ed0d27672a285c23bbe49 │ ipfs:QmU3UARNMZW6Lquvu286wFJVkMxS13fVMFdkxy6HrUdfh5 │
+└──────────────────────┴────────────────────────────────────────────┴─────────────────────────────────────────────────────┘
+
+[ [ 'kernel', '0x62415400537A556d449DdC19BeC1A1EE5D7b0812' ],
+  [ 'acl', '0x3788a68266fa11b479398e0b29c40e2377c76017' ],
+  [ 'evmreg', '0x0aa36f3888830d343dbfbc460d392f6725eacfef' ],
+  [ 'token-manager',
+    '0xf3a4f81d3113d53b0fbef962b0724c1cd88014df' ],
+  [ 'voting', '0xefade5540d0da875b0332eba9b17ccf8bdd960c4' ],
+  [ 'vault', '0x734670205f81d218e41d217b78441e9806970611' ],
+  [ 'finance', '0x933e608f95fd899eb41f5e428d73d4d3c37e7cc8' ],
+  [ 'token-manager',
+    '0x426b18d1cca4b14616ffb174af2fe927de84b977' ],
+  [ 'voting', '0x385c2010acd80814483ed0d27672a285c23bbe49' ] ]
+voting 0x385c2010acd80814483ed0d27672a285c23bbe49
+dao [ 'acl',
+  'set-manager',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x385c2010acd80814483ed0d27672a285c23bbe49',
+  'CREATE_VOTES_ROLE',
+  '0x385c2010acd80814483ed0d27672a285c23bbe49' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Sets 'Voting' as the manager of the permission 'Create new votes' in 'Voting'"
+
+token-manager 0x426b18d1cca4b14616ffb174af2fe927de84b977
+finance 0x933e608f95fd899eb41f5e428d73d4d3c37e7cc8
+vault 0x734670205f81d218e41d217b78441e9806970611
+voting 0xefade5540d0da875b0332eba9b17ccf8bdd960c4
+dao [ 'acl',
+  'set-manager',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0xefade5540d0da875b0332eba9b17ccf8bdd960c4',
+  'CREATE_VOTES_ROLE',
+  '0xefade5540d0da875b0332eba9b17ccf8bdd960c4' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Sets 'Voting' as the manager of the permission 'Create new votes' in 'Voting'"
+
+token-manager 0xf3a4f81d3113d53b0fbef962b0724c1cd88014df
+evmreg 0x0aa36f3888830d343dbfbc460d392f6725eacfef
+acl 0x3788a68266fa11b479398e0b29c40e2377c76017
+dao [ 'acl',
+  'grant',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x3788a68266fa11b479398e0b29c40e2377c76017',
+  'CREATE_PERMISSIONS_ROLE',
+  '0xefade5540d0da875b0332eba9b17ccf8bdd960c4' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Grants 'Voting' the ability to perform actions of role 'Create permissions' on 'ACL'"
+
+dao [ 'acl',
+  'revoke',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x3788a68266fa11b479398e0b29c40e2377c76017',
+  'CREATE_PERMISSIONS_ROLE',
+  '0xb4124cEB3451635DAcedd11767f004d8a28c6eE7' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Revokes 0xb4124cEB3451635DAcedd11767f004d8a28c6eE7 the ability to perform actions of role 'Create permissions' on 'ACL'"
+
+dao [ 'acl',
+  'set-manager',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x3788a68266fa11b479398e0b29c40e2377c76017',
+  'CREATE_PERMISSIONS_ROLE',
+  '0xefade5540d0da875b0332eba9b17ccf8bdd960c4' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Sets 'Voting' as the manager of the permission 'Create permissions' in 'ACL'"
+
+kernel 0x62415400537A556d449DdC19BeC1A1EE5D7b0812
+dao [ 'acl',
+  'grant',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  'APP_MANAGER_ROLE',
+  '0xefade5540d0da875b0332eba9b17ccf8bdd960c4' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Grants 'Voting' the ability to perform actions of role 'Manage apps' on 'Kernel'"
+
+dao [ 'acl',
+  'revoke',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  'APP_MANAGER_ROLE',
+  '0xb4124cEB3451635DAcedd11767f004d8a28c6eE7' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Revokes 0xb4124cEB3451635DAcedd11767f004d8a28c6eE7 the ability to perform actions of role 'Manage apps' on 'Kernel'"
+
+dao [ 'acl',
+  'set-manager',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  '0x62415400537A556d449DdC19BeC1A1EE5D7b0812',
+  'APP_MANAGER_ROLE',
+  '0xefade5540d0da875b0332eba9b17ccf8bdd960c4' ]
+Generating transaction [started]
+→ Fetching DAO at 0x62415400537A556d449DdC19BeC1A1EE5D7b0812...
+Generating transaction [completed]
+Sending transaction [started]
+→ Waiting for transaction to be mined...
+Sending transaction [completed]
+ ✔ Successfully executed: "Sets 'Voting' as the manager of the permission 'Manage apps' in 'Kernel'"
+
