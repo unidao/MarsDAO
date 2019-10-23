@@ -1,2 +1,2 @@
 # DAO-Universe
-DAO Universe is a project for creating decentralized investment funds on the Blockchain techonology
+Mars DAO is an asset management DAO leveraging DeFi services
