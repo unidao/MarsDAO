@@ -1,4 +1,8 @@
-![](https://unidao.fund/unidao_logo_64.png)
+![](https://unidao.fund/unidao_logo_64.png) 
+
+<img style="float: right;" src="https://github.com/unidao/MarsDAO/raw/master/unidao_mars.png" data-canonical-src="https://github.com/unidao/MarsDAO/raw/master/unidao_mars.png" width="96" height="96" />
+
+
 
 ## MarsDAO
 
