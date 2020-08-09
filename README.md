@@ -1,6 +1,4 @@
-![](https://unidao.fund/unidao_logo_64.png) 
-
-<img style="float: right;" src="https://github.com/unidao/MarsDAO/raw/master/unidao_mars.png" data-canonical-src="https://github.com/unidao/MarsDAO/raw/master/unidao_mars.png" width="96" height="96" />
+<img style="float: left;" src="https://github.com/unidao/MarsDAO/raw/master/ud_mars_logo_full_t.png" data-canonical-src="https://github.com/unidao/MarsDAO/raw/master/ud_mars_logo_full_t.png" width="326" height="96" />
 
 
 
